@@ -13,6 +13,7 @@ If you are working with Minikube and want to try this locally run the following 
 eval $(minikube docker-env)
 
 docker build -t background-image ./background --network=host
+
 docker build -t frontend-image ./frontend --network=host
 
 If you're not using minikube publish these images to a docker registry and update the manifest files (k8s/backend-deployment.yaml and k8s/frontend-deployment.yaml and ) to include the image.
@@ -20,6 +21,7 @@ If you're not using minikube publish these images to a docker registry and updat
 ## Deploy apps to the cluster
 
 kubectl apply -f k8s/frontend-deployment.yaml
+
 kubectl apply -f k8s/backend-deployment.yaml
 
 ## Get URL for frontend service
